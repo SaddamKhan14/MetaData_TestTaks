@@ -9,7 +9,14 @@ PATH = os.getcwd()
 
 # write api response
 def writeToJSONFile(dir_name, fileName, data):
-    #filePathNameWExt = './' + dir_name + '/' + fileName + '.json'
+    dict = {}
+    dict['timestamp'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(data['dt']))
+    dict['temp'] = data['main']['temp']
+    dict['temp_max'] = data['main']['temp_max']
+    dict['temp_min'] = data['main']['temp_min']
+    dict['latitude'] = data['coord']['lat']
+    dict['longitude'] = data['coord']['lon']
+    dict['city'] = data['name']
     full_path = os.path.join(PATH, dir_name, fileName+'.json')
     with open(full_path, 'a') as fp:
         json.dump(data, fp)
@@ -18,20 +25,22 @@ def writeToJSONFile(dir_name, fileName, data):
 
 # display Data
 def show_data(data):
-    date = data['dt']
+    timestamp = data['dt']
     temp = data['main']['temp']
     temp_max = data['main']['temp_max']
     temp_min = data['main']['temp_min']
     latitude = data['coord']['lat']
     longitude = data['coord']['lon']
+    city = data['name']
 
     print()
-    print('Date : {}'.format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(date))))
+    print('Timestamp : {}'.format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp))))
     print('Temperature : {} degree celcius'.format(temp))
     print('Temperature MAX : {} degree celcius'.format(temp_max))
     print('Temperature MIN : {} degree celcius'.format(temp_min))
     print('Latitude : {}'.format(latitude))
     print('Longitude : {}'.format(longitude))
+    print('Longitude : {}'.format(city))
 
 # get data by location
 def get_data_by_location():
@@ -68,10 +77,13 @@ def main():
         for i in range(num_input):
             get_data_by_city()
 
-    else:
+    elif choice == '2':
         num_input = int(input('Enter number of entries you want to make : '))
         for i in range(num_input):
             get_data_by_location()
+
+    else :
+        print('Verify your input!')
 
 if __name__ == '__main__':
     main()
