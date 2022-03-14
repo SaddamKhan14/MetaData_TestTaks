@@ -3,8 +3,3 @@
 {"timestamp": "2022-03-14 22:15:53", "temp": 10.41, "temp_max": 11.98, "temp_min": 6.3, "latitude": 47.5001, "longitude": -120.5015, "city": "Washington"},
 {"timestamp": "2022-03-14 22:12:22", "temp": 5.27, "temp_max": 5.6, "temp_min": 4.15, "latitude": 43.7001, "longitude": -79.4163, "city": "Toronto"},
 {"timestamp": "2022-03-14 22:10:30", "temp": 18.03, "temp_max": 20.61, "temp_min": 15.17, "latitude": -33.8679, "longitude": 151.2073, "city": "Sydney"},
-{"timestamp": "2022-03-14 22:15:07", "temp": 26.23, "temp_max": 27.02, "temp_min": 25.51, "latitude": 1.2897, "longitude": 103.8501, "city": "Singapore"},
-{"timestamp": "2022-03-14 22:16:03", "temp": 8.81, "temp_max": 10.31, "temp_min": 6.92, "latitude": 35.6895, "longitude": 139.6917, "city": "Tokyo"},
-{"timestamp": "2022-03-14 22:17:07", "temp": 19.9, "temp_max": 19.9, "temp_min": 19.9, "latitude": 12.9762, "longitude": 77.6033, "city": "Bengaluru"},
-{"timestamp": "2022-03-14 22:08:04", "temp": 7.61, "temp_max": 9.07, "temp_min": 6.64, "latitude": 52.5244, "longitude": 13.4105, "city": "Berlin"},
-{"timestamp": "2022-03-14 22:09:21", "temp": 10.2, "temp_max": 10.88, "temp_min": 8.26, "latitude": 48.8534, "longitude": 2.3488, "city": "Paris"},
