@@ -196,6 +196,7 @@ SSH to the one of the cluster instances and clone the repository to your desired
 
 There are multiple option i.e. cron(shell scripting), jenkins, celery, oozie (CDH i.e. onprem) through which I can schedule the pipeline to trigger and 
 RUN the ETL job, out of all my favourite is Airflow. Here are the steps to schedule ETL data pipeline to RUN periodically.
+    
     1> Write an airflow DAG, with desired job run configuration i.e. start_date, end_date, schedule_interval, retries, retry_delay, etc. and create appropriate task leveraging inbuilt Airflow Operator i.e. Bash, Python, Docker, etc. to perform the task i.e. set up, start, stop, backfill, etc. as done in the MetaData/AirflowDAG.py 
     2> Place the airflow DAG i.e. MetaData/AirflowDAG.py, into the $AIRFLOW_HOM/dags either manually or by configuring CI/CD pipeline (using jenkins, buildkite, etc.) to pick the latest GIT changes through pull request, deploy and trigger the project build 
     3> Now switch to airflow UI in the browser, you will observe that a DAG with 'MetaData_etl_job_scheduler' will start appearing in case not just search for it, once DAG is located select switch its status from OFF to ON, then start the job and monitor DAG tree view, graph view, see runs details and logs per tasks, etc. 
